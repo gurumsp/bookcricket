@@ -1,4 +1,3 @@
-let myScore = 0;
 let lastPage = document.querySelector(".lastPage");
 let bookNoHolder = document.querySelector('#bookNo');
 let scoreUpdater = document.querySelector('#score');
@@ -7,14 +6,16 @@ let outHolder = document.querySelector('.out');
 const openBook = (event) => {
     let cover = document.querySelectorAll('.cover')
     let pages = document.querySelectorAll('.page')
+    if (outHolder.classList.contains('visible')) {
+        scoreUpdater.classList.remove('red');
+        outHolder.classList.remove('red');
+        outHolder.classList.remove('visible');
+        scoreUpdater.textContent = 0;
+    }
+
     cover.forEach(obj => {obj.classList.toggle("turn")})
     pages.forEach(obj => {obj.classList.toggle("turn")})
     bookNoHolder.classList.remove("bookNoShow")
-}
-
-const updateBookPage = () => {
-    let bookNo = Math.floor(Math.random() * 500) + 1;
-    let bookNoHolder = document.querySelector('#bookNo');
 }
 
 const updateScore = () => {
