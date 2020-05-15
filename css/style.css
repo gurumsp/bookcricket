@@ -70,7 +70,9 @@ button {
   transform: rotateY(0deg);
   width: 9.25rem;
   height: 12.5rem;
-}
+  background-image: url(../image/sachin_playing_it_my_way.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;}
 .page {
   top: 0.25rem;
   left: 0.25rem;
