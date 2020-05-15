@@ -10,6 +10,11 @@ body {
   color: #d9d9eb;
   text-align: center;
 }
+button {
+  font-size: 3rem;
+  border: 0.2em solid purple;
+  padding: 0 2rem;
+}
 .book {
   position: relative;
   top: 0;
