@@ -18,6 +18,10 @@ const openBook = (event) => {
     bookNoHolder.classList.remove("bookNoShow")
 }
 
+ const isOdd = (n) => {
+    return Math.abs(n % 2) == 1;
+ }
+
 const updateScore = () => {
     let currentScore = Number(scoreUpdater.textContent);
     let hitNow = bookNoHolder.textContent.split('');
@@ -39,6 +43,10 @@ const updateScore = () => {
 
 lastPage.addEventListener("animationend", () => {
     let bookNo = Math.floor(Math.random() * 500) + 1;
+    if (isOdd(bookNo)) {
+        bookNo += 1;
+    }
+
     bookNoHolder.textContent = bookNo;
     bookNoHolder.classList.toggle("bookNoShow");
     updateScore();
